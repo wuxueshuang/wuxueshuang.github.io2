@@ -19,7 +19,7 @@ $(function(){
 		var x_=ev.clientX;
 		var y_=ev.clientY;
 		clearInterval(play);
-			console.log('我按下了');
+			//console.log('我按下了');
 			$(this).bind('mousemove',function(ev){
 				/*获取当前鼠标的坐标*/
 				var x=ev.clientX;
