@@ -2,21 +2,32 @@
 <html lang="zh-cn">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
         <title>江小雾</title>
+        <link href="css/reset.css" rel="stylesheet" />
         <link href = "./css/bootstrap.min.css" rel = "stylesheet" /> 
         <link href = "./css/rolling-screen.css" rel = "stylesheet" />         
-		<link href="css/index.css" rel="stylesheet" />  
+		<link href="css/index.css" rel="stylesheet" />
+		<link href="css/swiper.css" rel="stylesheet">          
+		<link href="css/myswiper.css" rel="stylesheet" />  
+		<link href="./css/wheelmenu.css" rel="stylesheet" />
 		<style>			
 		</style>
 		<!--[if lte IE 8]>
 		<style type="text/css">
-			html,body{width:100%; height:100%; overflow:scroll}
-			.section-btn{display:none;}
+			.my-video-dimensions{
+				margin:0 auto;
+			}
+			#my-video_html5_api .vjs-big-play-button{
+				display:none;
+			}
 		</style>
-		<![endif]-->
-		<script>
-			
-		</script>
+		<![endif]-->		
+		<script type="text/javascript" src="./js/video.min.js"></script>	
+		<script type="text/javascript" src="./js/jquery-3.2.1.js"></script>
+		<script type="text/javascript" src="http://cpro.baidustatic.com/cpro/ui/c.js" ></script>//轮播菜单		
+		<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js" ></script>
+		
 	</head>
 
 	<body>
@@ -51,49 +62,150 @@
 			<!-- 头部 end -->
 
 			<section class="section-wrap">
-				<div class="section section-1">
-					<div class="title active">
-						<p class="tit">CSS3 纵向滚屏翻页，支持键盘，鼠标滚轮操作</p>
-						<div class="h-cont">
-		                    <!-- 专注于web前端开发 start -->
-		                    <div class="h-text">
-		                  	<div class="zhuan animated fadeInDown"><img src="images/index/zhuan.png"></div>
-		                        <div class="zhu animated fadeInUp"><img src="images/index/zhu.png"></div>
-		                        <div class="yu  animated fadeInDown"><img src="images/index/yu.png"></div>
-		                        <div class="web animated fadeInUp"><img src="images/index/web.png"></div>
-		                        <div class="qian  animated fadeInDown"><img src="images/index/qian.png"></div>
-		                        <div class="duan animated fadeInUp"><img src="images/index/duan.png"></div>
-		                        <div class="kai  animated fadeInDown"><img src="images/index/kai.png"></div>
-		                        <div class="fa animated fadeInUp"><img src="images/index/fa.png"></div>
+				<div class="section section-1">				
+					<div class="h-cont">
+	                    <!-- 专注于web前端开发 start -->
+	                    <div class="h-text">
+		                  	<div class="zhuan animated fadeInDown"><img src="images/index/zhuan1.png"></div>
+		                        <div class="zhu animated fadeInUp"><img src="images/index/zhu1.png"></div>
+		                        <div class="yu  animated fadeInDown"><img src="images/index/yu1.png"></div>			                        
+		                        <div class="qian  animated fadeInDown"><img src="images/index/qian1.png"></div>
+		                        <div class="duan animated fadeInUp"><img src="images/index/duan1.png"></div>
+		                        <div class="kai  animated fadeInDown"><img src="images/index/kai1.png"></div>
+		                        <div class="fa animated fadeInUp"><img src="images/index/fa1.png"></div>
 		                    </div>
-		                    <!-- 专注于web前端开发 end -->
-                    	</div>
-					</div>
+	                    <!-- 专注于web前端开发 end -->
+	                    <!-- 视频播放 start -->
+	                    <video id="my-video" class="video-js" controls preload="auto" width="372" height="378" margin = "0 auto"
+	 					 data-setup="{}">
+		 					 <source src="./video/video.mp4" type="video/mp4">			 					 
+		  				</video>
+		  				<!--视频播放 end -->
+                	</div>
 				</div>
 				<div class="section section-2">
-					<div class="title">
-						<p class="tit">随便写写意思下!</p>
+					<div class = "page2-content" style = "width:100%;height:100%;position: relative;background-image:url(./images/page2/star.jpg);background-size:cover;">
+						
+						<!-- Swiper 3D轮播图-->
+					    <div class="swiper-container">
+					        <div class="swiper-wrapper" style = "width:300px;height:300px;">
+					        	<div class="swiper-slide" style="background-color:#484047">
+					            	<a href = "works/zhaopin/index.html" target = "_blank" class = "fl link-content">
+					            		<span class = "fl page2-title">
+					            			操作招聘信息
+					            		</span>
+					            		<span class = "fl"><em class = "fl page2-dir">重点:</em><i class = "fl page2-diss">hash和search值得应用</i></span>
+					            		<span class = "fl"><em class = "fl page2-dir">本质:</em></span>
+					            		<span class = "fl"><em class = "fl page2-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page2-diss">考察hash值和search的作用</i></span>
+					            		<span class = "fl"><em class = "fl page2-dir">考察:</em></span>
+					            		<span class = "fl"><em class = "fl page2-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page2-diss">根据数据渲染结构</i></span>
+					            	</a>
+					            </div>					            
+					            <div class="swiper-slide" style="background-color:#484047">
+					            	<a href = "works/clock/index.html" target = "_blank" class = "fl link-content">
+					            		<span class = "fl page2-title">
+					            			图片时钟
+					            		</span>					            		
+					            		<span class = "fl"><em class = "fl page2-dir">原理:</em><i class = "fl page2-diss">获取当前时间,实现翻页效果</i></span>
+					            		<span class = "fl"><em class = "fl page2-dir">功能拆分:</em></span>
+					            		<span class = "fl"><i class = "fl page2-diss">获取时间</i></span>
+					            		<span class = "fl"><i class = "fl page2-diss">显示时间</i></span>
+					            		<span class = "fl"><i class = "fl page2-diss">制作图片变化的动画效果</i></span>					            		
+					            	</a>
+					            </div>
+					            <div class="swiper-slide" style="background-color:#484047">
+					            	<a href = "works/magnifier/index.html" target = "_blank" class = "fl link-content">
+					            		<span class = "fl page2-title">
+					            			放大镜效果
+					            		</span>
+					            		<span class = "fl"><em class = "fl page2-dir">原理:</em></span>
+					            		<span class = "fl"><em class = "fl page2-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page2-diss">等比缩放</i></span>
+					            		<span class = "fl"><em class = "fl page2-dir">重点:</em></span>
+					            		<span class = "fl"><em class = "fl page2-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page2-diss">寻找大图和小图的比例关系</i></span>
+					            		<span class = "fl"><em class = "fl page2-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page2-diss">background属性的应用</i></span>
+					            	</a>
+					            </div>
+					            <div class="swiper-slide" style="background-color:#484047">
+					            	<a href = "works/small-drag-game/index.html" target = "_blank" class = "fl link-content">
+					            		<span class = "fl page2-title">
+					            			拼图小游戏 
+					            		</span>
+					            		<span class = "fl"><em class = "fl page2-dir">重点:</em></span>
+					            		<span class = "fl"><em class = "fl page2-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page2-diss">碰撞函数的封装</i></span>
+					            		<span class = "fl"><em class = "fl page2-dir">本质:</em></span>
+					            		<span class = "fl"><em class = "fl page2-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page2-diss">熟悉DOM操作</i></span>
+					            		<span class = "fl"><em class = "fl page2-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page2-diss">复习排序算法</i></span>
+					            	</a>
+					            </div>
+					            <div class="swiper-slide" style="background-color:#484047">
+					            	<a href = "works/search/index.html" target = "_blank" class = "fl link-content">
+					            		<span class = "fl page2-title">
+					            			豆瓣图书搜索
+					            		</span>
+					            		<span class = "fl"><em class = "fl page2-dir">重点:</em></span>
+					            		<span class = "fl"><em class = "fl page2-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page2-diss">jsonp跨域请求数据</i></span>
+					            		<span class = "fl"><em class = "fl page2-dir">原理:</em></span>
+					            		<span class = "fl"><em class = "fl page2-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page2-diss">函数的定义和调用</i></span>
+					            		<span class = "fl"><em class = "fl page2-dir">需要:</em></span>
+					            		<span class = "fl"><em class = "fl page2-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page2-diss">豆瓣图书api接口</i></span>
+					            	</a>
+					            </div>
+					            <div class="swiper-slide" style="background-color:#484047">
+					            	<a href = "works/smallGame/index.html" target = "_blank" class = "fl link-content">
+					            		<span class = "fl page2-title">
+					            			消除表情小游戏
+					            		</span>
+					            		<span class = "fl"><em class = "fl page2-dir">重点:</em></span>
+					            		<span class = "fl"><em class = "fl page2-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page2-diss">抖函数的封装</i></span>					            		
+					            		<span class = "fl"><em class = "fl page2-dir">原理:</em></span>
+					            		<span class = "fl"><em class = "fl page2-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page2-diss">定时器的应用</i></span>
+					            		<span class = "fl"><em class = "fl page2-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page2-diss">js根据数据渲染结构</i></span>
+					            	</a>
+					            </div>
+
+					        </div>				   				    					        
+					    </div>
+					     <!-- Swiper JS -->	
+					    <script src="./js/swiper.min.js"></script>
+					    <script src="./js/myswiper.js"></script>	
 					</div>
 				</div>
 				<div class="section section-3">
-					<div class="title">
-						<p class="tit">随便写写意思下</p>
-					</div>
+	                <!-- moblie-page 移动端 -->
+	                <div class="m-cont">
+	                	<!-- 照片环 start -->
+	                	<div class="m-picture">
+	                		<div class="htmleaf-container" >		
+								<div class="pic">
+									<a href = "./mobile/index.html" target = "_blank">
+										<img src="./images/page3/1.jpg"/>
+					                	<b class = "tips">拖一下试试看</b>
+										<b class = "tips">点一下试试看</b>
+									</a>
+									<a href = "./mobile/index2.html" target = "_blank"><img src="./images/page3/2.jpg" /></a>
+									<a href = "./mobile/index3.html" target = "_blank"><img src="./images/page3/3.jpg"/></a>
+									<a href = "./mobile/index4.html" target = "_blank"><img src="./images/page3/4.jpg"/></a>
+									<a href = "./mobile/index.html" target = "_blank"><img src="./images/page3/5.jpg"/></a>
+									<a href = "./mobile/index2.html" target = "_blank"><img src="./images/page3/6.jpg"/></a>
+									<a href = "./mobile/index3.html" target = "_blank"><img src="./images/page3/7.jpg"/></a>
+									<a href = "./mobile/index4.html" target = "_blank"><img src="./images/page3/8.jpg"/></a>
+									<a href = "./mobile/index.html" target = "_blank"><img src="./images/page3/9.jpg"/></a>
+									<a href = "./mobile/index2.html" target = "_blank"><img src="./images/page3/10.jpg"/></a>
+									<p></p>
+								</div>
+							</div>
+	                    </div>
+	                	<!-- 照片环 end -->
+	                   	<!-- 两个按钮 -->
+	                   	<div class="m-left" id="m-left"></div>
+	                    <div class="m-right" id="m-right"></div>
+					<script type="text/javascript" src = "./js/page3.js"/></script>	
 				</div>
 				<div class="section section-4">
-					<div class="title">
-						<p class="tit">随便写写意思下</p>
-					</div>
-				</div>
-				<div class="section section-5">
-					<div class="title">
-						<p class="tit">随便写写意思下</p>
-					</div>
 				</div>
 			</section>
 			<ul class="section-btn">
 			  <li class="on"></li>
-			  <li></li>
 			  <li></li>
 			  <li></li>
 			  <li></li>
@@ -104,7 +216,7 @@
 
 			
 		</div>
-		<script type="text/javascript" src="./js/jquery-3.2.1.js"></script>
+		<script type="text/javascript" src="./js/jquery.wheelmenu.js"></script>
 		<script type="text/javascript">
 			var list = document.getElementsByClassName("listcus")[0];
 			var lis = list.getElementsByTagName("li");
@@ -181,8 +293,6 @@
 
 
 			//头部导航栏点击事件
-			//let box = document.getElementById("box");
-			//let clickLi = box.getElementsByTagName("li");//导航栏所有的li;
 			$("#box li").each((index,item)=>{
 				$(item).on("click",function(){
 					console.log(item,index);
@@ -197,6 +307,32 @@
 					$('.section-wrap').attr("class","section-wrap").addClass(function() { return "put-section-"+i; }).find('.section').eq(i).find('.title').addClass('active');
 				});
 			});
+
+			//播放视频
+			var myPlayer = videojs('my-video');
+			videojs("my-video").ready(function(){
+				var myPlayer = this;
+				myPlayer.play();
+			});
+
+			//轮播菜单效果
+			$(document).ready(function(){
+
+		    	$(".wheel-button").wheelmenu({
+
+			        trigger: "hover",
+
+			        animation: "fly",
+
+			        animationSpeed: "fast"
+
+		      	});
+
+		    });
+		    var cpro_id = "u1385370";
+		    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+
+		    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd9d5d762d33e2700566cb90921389203' type='text/javascript'%3E%3C/script%3E"));
 		</script>
 	</body>
 </html>
