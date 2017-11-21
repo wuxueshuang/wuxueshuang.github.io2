@@ -8,9 +8,9 @@
         <link href = "./css/bootstrap.min.css" rel = "stylesheet" /> 
         <link href = "./css/rolling-screen.css" rel = "stylesheet" />         
 		<link href="css/index.css" rel="stylesheet" />
+		<link href="css/introduce.css" rel="stylesheet" />
 		<link href="css/swiper.css" rel="stylesheet">          
 		<link href="css/myswiper.css" rel="stylesheet" />  
-		<link href="./css/wheelmenu.css" rel="stylesheet" />
 		<style>			
 		</style>
 		<!--[if lte IE 8]>
@@ -28,7 +28,7 @@
 		<!--<script type="text/javascript" src="./js/c.js" ></script>--><!--轮播菜单-->
 		<script type="text/javascript" src="https://cpro.baidustatic.com/cpro/ui/c.js" ></script><!--轮播菜单-->		
 		<script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js" ></script>
-		
+		<script type="text/javascript" src="./js/utils.js" ></script>		
 	</head>
 
 	<body>
@@ -200,9 +200,44 @@
 	                   	<!-- 两个按钮 -->
 	                   	<div class="m-left" id="m-left"></div>
 	                    <div class="m-right" id="m-right"></div>
+	                    </div>
 					<script type="text/javascript" src = "./js/page3.js"/></script>	
 				</div>
 				<div class="section section-4">
+				    <div class="i-cont">
+						<div class="i-body"  style = "background:url(images/pro.png)">
+	                        <div class="i-box" id="i-box">
+	                          	<table class="i-show" cellspacing="0" cellpadding="0">
+	                                <tr>
+	                                    <th class="t-tit-name">姓名</th>
+	                                    <td class="t-tit" >吴雪爽</td>
+	                                </tr>
+	                                <tr>
+	                                    <th class="t-cycle-name">工作经验</th>
+	                                    <td class="t-cycle">2年</td>
+	                                </tr>
+	                                <tr>
+	                                    <th class="t-tool-name">学历</th>
+	                                    <td class="t-tool">大专</td>
+	                                </tr>
+	                                <tr>
+	                                    <th class="t-des-name t-bottom">专业</th>
+	                                    <td class="t-des" >计算机系统维护</td>
+	                                </tr>
+	                            </table>
+                       		</div>
+	                        <div class="i-next" id="i-next"></div>
+	                    </div>
+	                    <!-- 两个人start -->
+	                    <div class="i-people"></div>
+	                    <!-- 两个人end -->
+	                    <!-- 右边的人 start-->
+	                    <div class="i-person">
+	                        <div class="i-per-boll"></div>
+	                    </div>
+	                    <!-- 右边的人 end -->
+	                </div> 
+	                <script type="text/javascript" src="./js/introduce.js" ></script>
 				</div>
 			</section>
 			<ul class="section-btn">
@@ -212,18 +247,14 @@
 			  <li></li>
 			</ul>
 			<div class="arrow">&laquo;</div>
-
-
-
-			
 		</div>
-		<script type="text/javascript" src="./js/jquery.wheelmenu.js"></script>
-		<script type="text/javascript">
+		<script type="text/javascript" src="./js/index.js" ></script>		
+		<!--<script type="text/javascript">
 			var list = document.getElementsByClassName("listcus")[0];
 			var lis = list.getElementsByTagName("li");
-			console.log(lis);
+			//console.log(lis);
 			let baseW = document.documentElement.clientWidth/4;//可视区域的宽/当前导航按钮的数量 = 一个导航按钮所占的宽
-			console.log(baseW);
+			//console.log(baseW);
 			for( var i = 0; i < lis.length; i++ ){
 				lis[i].style.left = baseW*i + "px";
 			}
@@ -296,9 +327,8 @@
 			//头部导航栏点击事件
 			$("#box li").each((index,item)=>{
 				$(item).on("click",function(){
-					console.log(item,index);
-					console.log($("item div"));
-					//$("")
+					//console.log(item,index);
+					//console.log($("item div"));
 					$("item div").css("transform","rotateX(-180deg)");
 					$("item div").css("transition",null);
 					$("item span").css("transform","rotateX(90deg)");
@@ -316,24 +346,7 @@
 				myPlayer.play();
 			});
 
-			//轮播菜单效果
-			$(document).ready(function(){
-
-		    	$(".wheel-button").wheelmenu({
-
-			        trigger: "hover",
-
-			        animation: "fly",
-
-			        animationSpeed: "fast"
-
-		      	});
-
-		    });
-		    var cpro_id = "u1385370";
-		    var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-
-		    document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fd9d5d762d33e2700566cb90921389203' type='text/javascript'%3E%3C/script%3E"));
-		</script>
+			
+		</script>-->
 	</body>
 </html>

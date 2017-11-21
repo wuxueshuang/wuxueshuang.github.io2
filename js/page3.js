@@ -30,7 +30,7 @@ $(function(){
 
 				 roY+=xN*0.2;
 				roX-=yN*0.1;
-				console.log('移动');
+				//console.log('移动');
 				//$('body').append('<div style="width:5px;height:5px;position:absolute;top:'+y+'px;left:'+x+'px;background-color:red"></div>');
 
 				$('.pic').css({
