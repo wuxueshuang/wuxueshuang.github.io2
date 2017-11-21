@@ -23,7 +23,7 @@
     width:240px;
     white-space: nowrap;
 }
-.page2-title{
+.page3-title{
     width:300px;
     height:30px;
     //text-align: center;
@@ -31,11 +31,11 @@
     color:#ccc;
     letter-spacing:3px;
 }
-.page2-dir,.page2-diss{
+.page3-dir,.page3-diss{
     font:16px/36px "微软雅黑";
     color:#222;
 }
-.page2-dir{
+.page3-dir{
     color:red;
     font-weight: bold;
     margin-right:8px;

@@ -2,27 +2,28 @@ window.onload = function(){
 	var list = document.getElementsByClassName("listcus")[0];
 	var lis = list.getElementsByTagName("li");
 	console.log(lis);
-	let baseW = document.documentElement.clientWidth/4;//可视区域的宽/当前导航按钮的数量 = 一个导航按钮所占的宽
+	//let baseW = document.documentElement.clientWidth/4;//可视区域的宽/当前导航按钮的数量 = 一个导航按钮所占的宽
 	//console.log(baseW);
+	//设置导航栏右侧四个栏目的位置
 	for( var i = 0; i < lis.length; i++ ){
-		lis[i].style.left = baseW*i + "px";
+		lis[i].style.left = i*25+ "%";
 	}
-
-	//判断page4Box是否在可视区中
-	function isShowInit(){
-		let page4Box = document.getElementsByClassName("section-4")[0];
-		//判断page4Box是否在可视区中；
+	
+	//判断page2Box是否在可视区中
+	/*function isShowInit(){
+		let page2Box = document.getElementsByClassName("section-2")[0];
+		//判断page2Box是否在可视区中；
 		function getRect(obj){
 	        return obj.getBoundingClientRect();
 	    }
-	    if(getRect(page4Box).top < document.documentElement.clientHeight-60){
-	        console.log("在可视区域里了1111",getRect(page4Box).top,document.documentElement.clientHeight);
+	    if(getRect(page2Box).top < document.documentElement.clientHeight-60){
+	        console.log("在可视区域里了1111",getRect(page2Box).top,document.documentElement.clientHeight);
 	        return true;
 	    }else{        
-	        console.log("没在可视区域中",getRect(page4Box).top,document.documentElement.clientHeight);
+	        console.log("没在可视区域中",getRect(page2Box).top,document.documentElement.clientHeight);
 	        return false;
 	    }
-	}
+	}*/
 
 
 	//此处引用：鼠标滚轮mousewheel插件
@@ -37,7 +38,7 @@ window.onload = function(){
 		/*当前页面赋值*/
 		function up(){i++;if(i==$btn.length){i=0};}
 		function down(){i--;if(i<0){i=$btn.length-1};}
-		isShowInit();
+		//isShowInit();
 
 		/*页面滑动*/
 		function run(){
@@ -50,7 +51,7 @@ window.onload = function(){
 			$(this).click(function(){
 				i=index;
 				run();
-				isShowInit();
+				//isShowInit();
 			})
 		});
 		
@@ -58,7 +59,7 @@ window.onload = function(){
 		$arrow.one('click',go);
 		function go(){
 			up();run();	
-			isShowInit();
+			//isShowInit();
 			setTimeout(function(){$arrow.one('click',go)},1000)
 		};
 		
@@ -68,7 +69,7 @@ window.onload = function(){
 			if(event.deltaY<0) {up()}
 			else{down()}
 			run();
-			isShowInit();
+			//isShowInit();
 			setTimeout(function(){$wrap.one('mousewheel',mouse_)},1000)
 		};
 		
@@ -90,7 +91,7 @@ window.onload = function(){
 			down:down,
 			run:run,
 			go:go,
-			isShowInit:isShowInit
+			//isShowInit:isShowInit
 		}
 	});
 

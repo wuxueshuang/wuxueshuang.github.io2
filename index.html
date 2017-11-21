@@ -11,30 +11,28 @@
 		<link href="css/introduce.css" rel="stylesheet" />
 		<link href="css/swiper.css" rel="stylesheet">          
 		<link href="css/myswiper.css" rel="stylesheet" />  
-		<style>			
+		<style>	
+					
 		</style>
 		<!--[if lte IE 8]>
 		<style type="text/css">
-			.my-video-dimensions{
-				margin:0 auto;
-			}
-			#my-video_html5_api .vjs-big-play-button{
-				display:none;
-			}
+			
 		</style>
 		<![endif]-->		
 		<script type="text/javascript" src="./js/video.min.js"></script>	
-		<script type="text/javascript" src="./js/jquery-3.2.1.js"></script>		
-		<!--<script type="text/javascript" src="./js/c.js" ></script>--><!--轮播菜单-->
+		<script type="text/javascript" src="./js/jquery-3.2.1.js"></script>	
+		<script src="https://api.map.baidu.com/api?v=1.3"></script>	
 		<script type="text/javascript" src="https://cpro.baidustatic.com/cpro/ui/c.js" ></script><!--轮播菜单-->		
-		<script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js" ></script>
+		<script type="text/javascript" src="https://cdn.bootcss.com/jquery/1.11.0/jquery.min.js" ></script>		
+		<script type="text/javascript" src="js/jquery.baiduMap.min.js"></script>
+		<script type="text/javascript" src="js/map.js"></script>
 		<script type="text/javascript" src="./js/utils.js" ></script>		
 	</head>
 
 	<body>
 		<div class = "myWrap">
 			<!-- 头部 start -->
-			<div id = "box" class="container-fluid">
+			<!--<div id = "box" class="container-fluid">
 				<div  class = "row">
 					<div class="list row">
 						<ul class = "list list-left col-sm-3 col-md-3 col-lg-3">
@@ -58,7 +56,32 @@
 							</li>
 						</ul>
 					</div>
-				</div>
+				</div>				
+			</div>-->
+			<div id = "box">
+				<ul class = "list">
+					<li class=" title-item" >
+						<span class="back">首页</span>
+					</li>
+				</ul>
+				<ul class = "listcus">
+					<li class="title-item" >
+						<div class="positive">个人简介</div>
+						<span class="back">个人简介</span>
+					</li>
+					<li class="title-item" >
+						<div class="positive">作品展示</div>
+						<span class="back">作品展示</span>
+					</li>
+					<li class="title-item" >
+						<div class="positive">移动端</div>
+						<span class="back">移动端</span>
+					</li>
+					<li class="title-item" >
+						<div class="positive">联系我</div>
+						<span class="back">联系我</span>
+					</li>
+				</ul>
 			</div>
 			<!-- 头部 end -->
 
@@ -85,125 +108,6 @@
                 	</div>
 				</div>
 				<div class="section section-2">
-					<div class = "page2-content" style = "width:100%;height:100%;position: relative;background-image:url(./images/page2/star.jpg);background-size:cover;">
-						
-						<!-- Swiper 3D轮播图-->
-					    <div class="swiper-container">
-					        <div class="swiper-wrapper" style = "width:300px;height:300px;">
-					        	<div class="swiper-slide" style="background-color:#484047">
-					            	<a href = "works/zhaopin/index.html" target = "_blank" class = "fl link-content">
-					            		<span class = "fl page2-title">
-					            			操作招聘信息
-					            		</span>
-					            		<span class = "fl"><em class = "fl page2-dir">重点:</em><i class = "fl page2-diss">hash和search值得应用</i></span>
-					            		<span class = "fl"><em class = "fl page2-dir">本质:</em></span>
-					            		<span class = "fl"><em class = "fl page2-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page2-diss">考察hash值和search的作用</i></span>
-					            		<span class = "fl"><em class = "fl page2-dir">考察:</em></span>
-					            		<span class = "fl"><em class = "fl page2-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page2-diss">根据数据渲染结构</i></span>
-					            	</a>
-					            </div>					            
-					            <div class="swiper-slide" style="background-color:#484047">
-					            	<a href = "works/clock/index.html" target = "_blank" class = "fl link-content">
-					            		<span class = "fl page2-title">
-					            			图片时钟
-					            		</span>					            		
-					            		<span class = "fl"><em class = "fl page2-dir">原理:</em><i class = "fl page2-diss">获取当前时间,实现翻页效果</i></span>
-					            		<span class = "fl"><em class = "fl page2-dir">功能拆分:</em></span>
-					            		<span class = "fl"><i class = "fl page2-diss">获取时间</i></span>
-					            		<span class = "fl"><i class = "fl page2-diss">显示时间</i></span>
-					            		<span class = "fl"><i class = "fl page2-diss">制作图片变化的动画效果</i></span>					            		
-					            	</a>
-					            </div>
-					            <div class="swiper-slide" style="background-color:#484047">
-					            	<a href = "works/magnifier/index.html" target = "_blank" class = "fl link-content">
-					            		<span class = "fl page2-title">
-					            			放大镜效果
-					            		</span>
-					            		<span class = "fl"><em class = "fl page2-dir">原理:</em></span>
-					            		<span class = "fl"><em class = "fl page2-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page2-diss">等比缩放</i></span>
-					            		<span class = "fl"><em class = "fl page2-dir">重点:</em></span>
-					            		<span class = "fl"><em class = "fl page2-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page2-diss">寻找大图和小图的比例关系</i></span>
-					            		<span class = "fl"><em class = "fl page2-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page2-diss">background属性的应用</i></span>
-					            	</a>
-					            </div>
-					            <div class="swiper-slide" style="background-color:#484047">
-					            	<a href = "works/small-drag-game/index.html" target = "_blank" class = "fl link-content">
-					            		<span class = "fl page2-title">
-					            			拼图小游戏 
-					            		</span>
-					            		<span class = "fl"><em class = "fl page2-dir">重点:</em></span>
-					            		<span class = "fl"><em class = "fl page2-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page2-diss">碰撞函数的封装</i></span>
-					            		<span class = "fl"><em class = "fl page2-dir">本质:</em></span>
-					            		<span class = "fl"><em class = "fl page2-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page2-diss">熟悉DOM操作</i></span>
-					            		<span class = "fl"><em class = "fl page2-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page2-diss">复习排序算法</i></span>
-					            	</a>
-					            </div>
-					            <div class="swiper-slide" style="background-color:#484047">
-					            	<a href = "works/search/index.html" target = "_blank" class = "fl link-content">
-					            		<span class = "fl page2-title">
-					            			豆瓣图书搜索
-					            		</span>
-					            		<span class = "fl"><em class = "fl page2-dir">重点:</em></span>
-					            		<span class = "fl"><em class = "fl page2-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page2-diss">jsonp跨域请求数据</i></span>
-					            		<span class = "fl"><em class = "fl page2-dir">原理:</em></span>
-					            		<span class = "fl"><em class = "fl page2-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page2-diss">函数的定义和调用</i></span>
-					            		<span class = "fl"><em class = "fl page2-dir">需要:</em></span>
-					            		<span class = "fl"><em class = "fl page2-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page2-diss">豆瓣图书api接口</i></span>
-					            	</a>
-					            </div>
-					            <div class="swiper-slide" style="background-color:#484047">
-					            	<a href = "works/smallGame/index.html" target = "_blank" class = "fl link-content">
-					            		<span class = "fl page2-title">
-					            			消除表情小游戏
-					            		</span>
-					            		<span class = "fl"><em class = "fl page2-dir">重点:</em></span>
-					            		<span class = "fl"><em class = "fl page2-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page2-diss">抖函数的封装</i></span>					            		
-					            		<span class = "fl"><em class = "fl page2-dir">原理:</em></span>
-					            		<span class = "fl"><em class = "fl page2-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page2-diss">定时器的应用</i></span>
-					            		<span class = "fl"><em class = "fl page2-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page2-diss">js根据数据渲染结构</i></span>
-					            	</a>
-					            </div>
-
-					        </div>				   				    					        
-					    </div>
-					     <!-- Swiper JS -->	
-					    <script src="./js/swiper.min.js"></script>
-					    <script src="./js/myswiper.js"></script>	
-					</div>
-				</div>
-				<div class="section section-3">
-	                <!-- moblie-page 移动端 -->
-	                <div class="m-cont">
-	                	<!-- 照片环 start -->
-	                	<div class="m-picture">
-	                		<div class="htmleaf-container" >		
-								<div class="pic">
-									<a href = "./mobile/index.html" target = "_blank">
-										<img src="./images/page3/1.jpg"/>
-					                	<b class = "tips">拖一下试试看</b>
-										<b class = "tips">点一下试试看</b>
-									</a>
-									<a href = "./mobile/index2.html" target = "_blank"><img src="./images/page3/2.jpg" /></a>
-									<a href = "./mobile/index3.html" target = "_blank"><img src="./images/page3/3.jpg"/></a>
-									<a href = "./mobile/index4.html" target = "_blank"><img src="./images/page3/4.jpg"/></a>
-									<a href = "./mobile/index.html" target = "_blank"><img src="./images/page3/5.jpg"/></a>
-									<a href = "./mobile/index2.html" target = "_blank"><img src="./images/page3/6.jpg"/></a>
-									<a href = "./mobile/index3.html" target = "_blank"><img src="./images/page3/7.jpg"/></a>
-									<a href = "./mobile/index4.html" target = "_blank"><img src="./images/page3/8.jpg"/></a>
-									<a href = "./mobile/index.html" target = "_blank"><img src="./images/page3/9.jpg"/></a>
-									<a href = "./mobile/index2.html" target = "_blank"><img src="./images/page3/10.jpg"/></a>
-									<p></p>
-								</div>
-							</div>
-	                    </div>
-	                	<!-- 照片环 end -->
-	                   	<!-- 两个按钮 -->
-	                   	<div class="m-left" id="m-left"></div>
-	                    <div class="m-right" id="m-right"></div>
-	                    </div>
-					<script type="text/javascript" src = "./js/page3.js"/></script>	
-				</div>
-				<div class="section section-4">
 				    <div class="i-cont">
 						<div class="i-body"  style = "background:url(images/pro.png)">
 	                        <div class="i-box" id="i-box">
@@ -218,11 +122,18 @@
 	                                </tr>
 	                                <tr>
 	                                    <th class="t-tool-name">学历</th>
-	                                    <td class="t-tool">大专</td>
+	                                    <td class="t-tool">大专(计算机系统维护)</td>
 	                                </tr>
 	                                <tr>
-	                                    <th class="t-des-name t-bottom">专业</th>
-	                                    <td class="t-des" >计算机系统维护</td>
+	                                    <th class="t-des-name t-bottom">个人技能</th>
+	                                    <td class="t-des" >
+	                                    	1.使用html5+css3布局，并兼容主流浏览器<br/>
+	                                    	2.写适配各种不同尺寸的移动端页面，实践过不同的解决方案<br/>
+	                                    	3.对原生JavaScript，可使用API写各种的工具库<br/>
+	                                    	4.已经把ES6、ES7运用在的项目中，并用Babel编译<br/>
+	                                    	5.快速的上手使用主流的框架Vue，已经配合使用Vue-router,Vuex应用在项目中<br/>
+	                                    	6.对node有一定的了解，使用node搭建过API接口<br/>
+	                                    </td>
 	                                </tr>
 	                            </table>
                        		</div>
@@ -239,9 +150,143 @@
 	                </div> 
 	                <script type="text/javascript" src="./js/introduce.js" ></script>
 				</div>
+				<div class="section section-3">
+					<div class = "page3-content" style = "width:100%;height:100%;position: relative;background-image:url(./images/page3/star.jpg);background-size:cover;">
+						
+						<!-- Swiper 3D轮播图-->
+					    <div class="swiper-container">
+					        <div class="swiper-wrapper" style = "width:300px;height:300px;">
+					        	<div class="swiper-slide" style="background-color:#484047">
+					            	<a href = "works/zhaopin/index.html" target = "_blank" class = "fl link-content">
+					            		<span class = "fl page3-title">
+					            			操作招聘信息
+					            		</span>
+					            		<span class = "fl"><em class = "fl page3-dir">重点:</em><i class = "fl page3-diss">hash和search值得应用</i></span>
+					            		<span class = "fl"><em class = "fl page3-dir">本质:</em></span>
+					            		<span class = "fl"><em class = "fl page3-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page3-diss">考察hash值和search的作用</i></span>
+					            		<span class = "fl"><em class = "fl page3-dir">考察:</em></span>
+					            		<span class = "fl"><em class = "fl page3-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page3-diss">根据数据渲染结构</i></span>
+					            	</a>
+					            </div>					            
+					            <div class="swiper-slide" style="background-color:#484047">
+					            	<a href = "works/clock/index.html" target = "_blank" class = "fl link-content">
+					            		<span class = "fl page3-title">
+					            			图片时钟
+					            		</span>					            		
+					            		<span class = "fl"><em class = "fl page3-dir">原理:</em><i class = "fl page3-diss">获取当前时间,实现翻页效果</i></span>
+					            		<span class = "fl"><em class = "fl page3-dir">功能拆分:</em></span>
+					            		<span class = "fl"><i class = "fl page3-diss">获取时间</i></span>
+					            		<span class = "fl"><i class = "fl page3-diss">显示时间</i></span>
+					            		<span class = "fl"><i class = "fl page3-diss">制作图片变化的动画效果</i></span>					            		
+					            	</a>
+					            </div>
+					            <div class="swiper-slide" style="background-color:#484047">
+					            	<a href = "works/magnifier/index.html" target = "_blank" class = "fl link-content">
+					            		<span class = "fl page3-title">
+					            			放大镜效果
+					            		</span>
+					            		<span class = "fl"><em class = "fl page3-dir">原理:</em></span>
+					            		<span class = "fl"><em class = "fl page3-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page3-diss">等比缩放</i></span>
+					            		<span class = "fl"><em class = "fl page3-dir">重点:</em></span>
+					            		<span class = "fl"><em class = "fl page3-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page3-diss">寻找大图和小图的比例关系</i></span>
+					            		<span class = "fl"><em class = "fl page3-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page3-diss">background属性的应用</i></span>
+					            	</a>
+					            </div>
+					            <div class="swiper-slide" style="background-color:#484047">
+					            	<a href = "works/small-drag-game/index.html" target = "_blank" class = "fl link-content">
+					            		<span class = "fl page3-title">
+					            			拼图小游戏 
+					            		</span>
+					            		<span class = "fl"><em class = "fl page3-dir">重点:</em></span>
+					            		<span class = "fl"><em class = "fl page3-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page3-diss">碰撞函数的封装</i></span>
+					            		<span class = "fl"><em class = "fl page3-dir">本质:</em></span>
+					            		<span class = "fl"><em class = "fl page3-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page3-diss">熟悉DOM操作</i></span>
+					            		<span class = "fl"><em class = "fl page3-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page3-diss">复习排序算法</i></span>
+					            	</a>
+					            </div>
+					            <div class="swiper-slide" style="background-color:#484047">
+					            	<a href = "works/search/index.html" target = "_blank" class = "fl link-content">
+					            		<span class = "fl page3-title">
+					            			豆瓣图书搜索
+					            		</span>
+					            		<span class = "fl"><em class = "fl page3-dir">重点:</em></span>
+					            		<span class = "fl"><em class = "fl page3-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page3-diss">jsonp跨域请求数据</i></span>
+					            		<span class = "fl"><em class = "fl page3-dir">原理:</em></span>
+					            		<span class = "fl"><em class = "fl page3-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page3-diss">函数的定义和调用</i></span>
+					            		<span class = "fl"><em class = "fl page3-dir">需要:</em></span>
+					            		<span class = "fl"><em class = "fl page3-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page3-diss">豆瓣图书api接口</i></span>
+					            	</a>
+					            </div>
+					            <div class="swiper-slide" style="background-color:#484047">
+					            	<a href = "works/smallGame/index.html" target = "_blank" class = "fl link-content">
+					            		<span class = "fl page3-title">
+					            			消除表情小游戏
+					            		</span>
+					            		<span class = "fl"><em class = "fl page3-dir">重点:</em></span>
+					            		<span class = "fl"><em class = "fl page3-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page3-diss">抖函数的封装</i></span>					            		
+					            		<span class = "fl"><em class = "fl page3-dir">原理:</em></span>
+					            		<span class = "fl"><em class = "fl page3-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page3-diss">定时器的应用</i></span>
+					            		<span class = "fl"><em class = "fl page3-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page3-diss">js根据数据渲染结构</i></span>
+					            	</a>
+					            </div>
+
+					        </div>				   				    					        
+					    </div>
+					     <!-- Swiper JS -->	
+					    <script src="./js/swiper.min.js"></script>
+					    <script src="./js/myswiper.js"></script>	
+					</div>
+				</div>
+				<div class="section section-4">
+	                <!-- moblie-page 移动端 -->
+	                <div class="m-cont">
+	                	<!-- 照片环 start -->
+	                	<div class="m-picture">
+	                		<div class="htmleaf-container" >		
+								<div class="pic">
+									<a href = "./mobile/index.html" target = "_blank">
+										<img src="./images/page4/1.jpg"/>
+					                	<b class = "tips">拖一下试试看</b>
+										<b class = "tips">点一下试试看</b>
+									</a>
+									<a href = "./mobile/index2.html" target = "_blank"><img src="./images/page4/2.jpg" /></a>
+									<a href = "./mobile/index3.html" target = "_blank"><img src="./images/page4/3.jpg"/></a>
+									<a href = "./mobile/index4.html" target = "_blank"><img src="./images/page4/4.jpg"/></a>
+									<a href = "./mobile/index.html" target = "_blank"><img src="./images/page4/5.jpg"/></a>
+									<a href = "./mobile/index2.html" target = "_blank"><img src="./images/page4/6.jpg"/></a>
+									<a href = "./mobile/index3.html" target = "_blank"><img src="./images/page4/7.jpg"/></a>
+									<a href = "./mobile/index4.html" target = "_blank"><img src="./images/page4/8.jpg"/></a>
+									<a href = "./mobile/index.html" target = "_blank"><img src="./images/page4/9.jpg"/></a>
+									<a href = "./mobile/index2.html" target = "_blank"><img src="./images/page4/10.jpg"/></a>
+									<p></p>
+								</div>
+							</div>
+	                    </div>
+	                	<!-- 照片环 end -->
+	                   	<!-- 两个按钮 -->
+	                   	<div class="m-left" id="m-left"></div>
+	                    <div class="m-right" id="m-right"></div>
+	                    </div>
+					<script type="text/javascript" src = "./js/page4.js"/></script>	
+				</div>
+				<div class="section section-5">
+				    <!-- contact-page 联系我们 -->
+	                <div class="c-cont">
+	                	<!-- 地图 -->
+	                    <div id="c-map"></div>
+	                    <div class="g-contact">
+	                    	<ul>
+	                        	<li><em>13522709631</em></li>
+	                        	<li><em>13522709631@163.com</em></li>
+	                        	<li><em><img width="110" height="110" src="images/mine.jpg"></em></li>
+	                        </ul>
+	                    </div>
+	                </div>
+	            </div>
 			</section>
 			<ul class="section-btn">
 			  <li class="on"></li>
+			  <li></li>
 			  <li></li>
 			  <li></li>
 			  <li></li>
