@@ -174,7 +174,8 @@
 }
 .h-text img{
 	opacity: 0;
-	animation:3s 3s changeOpacity ease-in-out;
+	animation:5s 3s changeOpacity ease-in-out;
+	transform: translate(12px, 50%);
 }
 
 @keyframes changeOpacity{
