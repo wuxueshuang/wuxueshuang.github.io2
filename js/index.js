@@ -117,8 +117,8 @@ window.onload = function(){
 	//头部导航栏点击事件
 	$("#box li").each((index,item) =>{
 		$(item).on("click",function(){
-			console.log(item,index);
-			console.log($("item div"));
+			//console.log(item,index);
+			//console.log($("item div"));
 			//$("")
 			$("item div").css("transform","rotateX(-180deg)");
 			$("item div").css("transition",null);

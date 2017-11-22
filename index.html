@@ -208,12 +208,12 @@
 	                <script type="text/javascript" src="./js/introduce.js" ></script>
 				</div>
 				<div class="section section-3">
-					<div class = "page3-content" style = "width:100%;height:100%;position: relative;background-image:url(./images/page3/sky.jpg);background-size:cover;">
-						
+					<div class = "page3-content" style = "width:100%;height:100%;position:relative;background-color:#000;background-size:cover;">
+						<!--background-image:url(./images/page3/sky.jpg);-->
 						<!-- Swiper 3D轮播图-->
 					    <div class="swiper-container">
 					        <div class="swiper-wrapper" style = "width:300px;height:300px;">
-					        	<div class="swiper-slide" style="background-color:#484047">
+					        	<div class="swiper-slide">
 					            	<a href = "works/zhaopin/index.html" target = "_blank" class = "fl link-content">
 					            		<span class = "fl page3-title">
 					            			操作招聘信息
@@ -225,7 +225,7 @@
 					            		<span class = "fl"><em class = "fl page3-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page3-diss">根据数据渲染结构</i></span>
 					            	</a>
 					            </div>					            
-					            <div class="swiper-slide" style="background-color:#484047">
+					            <div class="swiper-slide">
 					            	<a href = "works/clock/index.html" target = "_blank" class = "fl link-content">
 					            		<span class = "fl page3-title">
 					            			图片时钟
@@ -237,7 +237,7 @@
 					            		<span class = "fl"><i class = "fl page3-diss">制作图片变化的动画效果</i></span>					            		
 					            	</a>
 					            </div>
-					            <div class="swiper-slide" style="background-color:#484047">
+					            <div class="swiper-slide">
 					            	<a href = "works/magnifier/index.html" target = "_blank" class = "fl link-content">
 					            		<span class = "fl page3-title">
 					            			放大镜效果
@@ -249,7 +249,7 @@
 					            		<span class = "fl"><em class = "fl page3-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page3-diss">background属性的应用</i></span>
 					            	</a>
 					            </div>
-					            <div class="swiper-slide" style="background-color:#484047">
+					            <div class="swiper-slide">
 					            	<a href = "works/small-drag-game/index.html" target = "_blank" class = "fl link-content">
 					            		<span class = "fl page3-title">
 					            			拼图小游戏 
@@ -261,7 +261,7 @@
 					            		<span class = "fl"><em class = "fl page3-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page3-diss">复习排序算法</i></span>
 					            	</a>
 					            </div>
-					            <div class="swiper-slide" style="background-color:#484047">
+					            <div class="swiper-slide">
 					            	<a href = "works/search/index.html" target = "_blank" class = "fl link-content">
 					            		<span class = "fl page3-title">
 					            			豆瓣图书搜索
@@ -274,7 +274,7 @@
 					            		<span class = "fl"><em class = "fl page3-dir">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</em><i class = "fl page3-diss">豆瓣图书api接口</i></span>
 					            	</a>
 					            </div>
-					            <div class="swiper-slide" style="background-color:#484047">
+					            <div class="swiper-slide">
 					            	<a href = "works/smallGame/index.html" target = "_blank" class = "fl link-content">
 					            		<span class = "fl page3-title">
 					            			消除表情小游戏
@@ -309,10 +309,12 @@
 						        <div class="div6">吧</div>
 						    </div></a>
 						</div>
+						<canvas id="canvas"></canvas>
 					     <!-- Swiper JS -->	
 					    <script src="./js/swiper.min.js"></script>
 					    <script src="./js/myswiper.js"></script>	
 					</div>
+
 				</div>
 				<div class="section section-4">
 	                <!-- moblie-page 移动端 -->
@@ -343,7 +345,7 @@
 	                   	<!-- 两个按钮 -->
 	                   	<div class="m-left" id="m-left"></div>
 	                    <div class="m-right" id="m-right"></div>
-	                    </div>
+	                </div>
 					<script type="text/javascript" src = "./js/mobile.js"/></script>	
 				</div>
 				<div class="section section-5" id = "section5">
