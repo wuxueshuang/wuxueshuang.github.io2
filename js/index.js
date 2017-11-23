@@ -79,7 +79,7 @@ window.onload = function(){
 		function go(){
 			up();run();	
 			//isShowInit();
-			setTimeout(function(){$arrow.one('click',go)},1000)
+			setTimeout(function(){$arrow.one('click',go)},500)
 		};
 		
 		/*响应鼠标*/
@@ -89,7 +89,7 @@ window.onload = function(){
 			else{down()}
 			run();
 			isShowInit();
-			setTimeout(function(){$wrap.one('mousewheel',mouse_)},1000)
+			setTimeout(function(){$wrap.one('mousewheel',mouse_)},500)
 		};
 		
 		/*响应键盘上下键*/
@@ -103,7 +103,7 @@ window.onload = function(){
 				case 40: up();run();	
 				break;
 			};
-			setTimeout(function(){$(document).one('keydown',k)},1000);
+			setTimeout(function(){$(document).one('keydown',k)},500);
 		}
 		return {
 			up:up,
