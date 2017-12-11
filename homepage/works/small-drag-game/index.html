@@ -1,0 +1,283 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>拖拽小游戏</title>
+<link rel="stylesheet" href="css/reset.css"/>
+<style>
+.wrap{
+	width:756px;
+	height:528px;
+	background:#816bcf;
+	margin:50px auto;
+	padding-top:22px;
+	}
+.box{
+	width:681px;
+	height:412px;
+	background:#f8f7fd;
+	border:1px solid #dcdcdc;
+	border-radius:20px;
+	margin:0 auto;
+	padding:46px 0;
+	position:relative;
+	}
+.wrapcontent{
+	width:456px;
+	height:369px;
+	padding:21px 52px 0 52px;
+	border:1px solid #dcdcdc;
+	background:#eee;
+	border-radius:20px;
+	margin:0 auto;
+	position:relative;
+	}
+.content{
+	border:3px solid #dcdcdc;
+	//border-radius:20px;	
+	background:#e8e8e8;
+	//padding: 0 0 15px 0 ;
+}
+.topbg{
+	position:absolute;
+	top:222px;
+	left:20px;
+	width:4px;
+	height:58px;
+	border:1px solid #dcdcdc;
+	border-radius:2px;
+	}
+.topbox{
+	width:450px;
+	height:36px;
+	background:#000;
+	opacity:0.8;
+	position:relative;
+	padding:15px 0;
+	text-align:center;
+	//margin-bottom:21px;
+	}
+.top{
+	display:inline-block;
+	width:259px;
+	height:34px;
+	border:1px solid #dcdcdc;
+	border-radius:2px;
+	margin:0 auto;
+	}
+#start{
+	width:128px;
+	height:34px;
+	background:#000;
+	border-right:1px solid #dcdcdc;
+	text-align:center;
+	font-size:16px;
+	color:#fff;
+	}
+#recovery{
+	width:130px;
+	height:34px;
+	background:#000;
+	text-align:center;
+	font-size:16px;
+	color:#FFF;
+	}
+.imgBox{
+	width:450px;
+	height:280px;
+	margin:0 auto;
+	position:relative;
+	}
+img{
+	position:absolute;
+	top:0;
+	left:0;
+	box-sizing:border-box;
+	border:1px solid #dcdcdc;
+	width:88px;
+	height:68px;
+	z-index = 1;
+	}
+
+
+</style>
+</head>
+
+<body>
+<div class="wrap">
+	<div class="box">
+        <div class="topbg"></div>
+    	<div class="wrapcontent">
+    		<div class="content">
+    			<div class="topbox">
+	            	<div class="top clearfix">
+		                <input type="button" id="start" class="fl" value="开始游戏"/>
+		                <input type="button" id="recovery" class="fl" value="恢复"/>
+	           	 </div>
+	            </div>
+	            <div class="imgBox">
+	            	
+	            </div>
+    		</div>
+            
+        </div>
+    </div>
+</div>
+	<script src = "js/data.js"></script>
+	<script src = "js/utils.js"></script>
+<script>
+		var imgBox = document.getElementsByClassName("imgBox")[0];
+
+		render();
+		
+
+        function render(){
+			imgBox.innerHTML = "";
+			for(var i = 0;i< data.length;i++){
+				imgBox.innerHTML += `<img src = "${data[i].url}" style="left:${i%5*90}px;top:${Math.floor(i/5)*70}px;"/>`;
+			}
+		}
+
+	    var inputs = $("input");
+	    var imgs = document.getElementsByTagName('img');
+	    var posiArr = [];//获取每个img的位置；
+	    getImgPos();
+	    function getImgPos(){
+	    	
+		    for( var i = 0; i < imgs.length; i++ ){
+		    	posiArr.push({
+		    		left:imgs[i].style.left,
+		    		top:imgs[i].style.top,
+		    	});
+		    }
+	    }
+	    console.log(posiArr);
+	    //点击开始游戏：
+		inputs[0].onclick = function(){
+			data.sort(function (){
+                return Math.random() - 0.5;    
+            });
+            for( var i = 0; i < imgs.length ; i++ ){
+            	mTween(imgs[i],{top:105,left:210},100,"linear",function(){
+				 	render();
+				 	getImgPos();
+					game();
+				});
+            }
+			
+           
+			
+		}
+
+
+		//恢复，即从小到大；
+		inputs[1].onclick = function(){
+			data.sort(function (a,b){
+            	return parseInt(a.text) - parseInt(b.text);   
+            });  
+           for( var i = 0; i < imgs.length ; i++ ){
+            	mTween(imgs[i],{top:105,left:210},100,"linear",function(){
+				 	render();
+				 	getImgPos();
+				 	game();
+				});
+            }
+            //console.log(imgs);
+		}
+   		game();
+		function game(){
+			var imgs = document.getElementsByTagName('img');
+	   		var oMove = null;//要移动的元素；
+	   		var oBox = null;//与移动img交换位置的元素；
+	   		var itemTop;//移动元素的top:
+	   		var itemLeft;//移动元素的left;
+	   		Array.from(imgs).forEach(function(item,index){
+	   			item.index = index;
+	   			item.onmousedown = function (ev){
+	   				var disX = ev.clientX - item.offsetLeft;//鼠标元素左边的距离
+	   				var disY = ev.clientY - item.offsetTop;//鼠标元素上边的距离
+	   				//console.log(disX,disY);
+
+	   				
+	   				oMove = item;
+	   				if(document.onmousemove){
+	   					return;
+	   				}
+	   				document.onmousemove = function(ev){
+	   					Array.from(imgs).forEach(function(item,index){
+	   						item.style.zIndex = 1;//将所有的img层级设置为1；
+	   					});
+	   					item.style.zIndex = 2;//移动的img层级设置为2；
+	   					var oMoveLeft = ev.clientX - disX;
+	   					var oMoveTop = ev.clientY - disY;
+	   					var oMoveMaxT = imgBox.offsetHeight - item.offsetHeight;
+	   					var oMoveMaxL = imgBox.offsetWidth - item.offsetWidth;
+	   					//console.log(oMoveMaxT,oMoveMaxL);
+	   					if(oMoveLeft < 0){
+	   						oMoveLeft = 0;
+	   					}
+	   					if(oMoveTop < 0){
+	   						oMoveTop = 0;
+	   					}
+	   					if(oMoveTop > oMoveMaxT){
+	   						oMoveTop = oMoveMaxT;
+	   					}
+	   					if(oMoveLeft > oMoveMaxL){
+	   						oMoveLeft = oMoveMaxL;
+	   					}
+	   					item.style.top = oMoveTop + "px";
+	   					item.style.left = oMoveLeft + "px";
+	   					var arr = [];
+	   					for( var i = 0; i < imgs.length; i++ ){	   						
+	   						if(collision(item,imgs[i])){
+	   							arr.push(imgs[i]);
+	   						}
+	   					}
+	   					arr.splice(arr.indexOf(item),1)//将item本身从数组中删除；
+
+	   					var centerX = item.offsetLeft + item.offsetWidth/2;//移动元素的中心点X
+	   					var centerY = item.offsetTop + item.offsetHeight/2;//移动元素的中心点Y
+	   					var min = 9999;
+
+	   					for( var i = 0; i < arr.length; i++ ){
+	   						var x = arr[i].offsetLeft + arr[i].offsetWidth/2;
+	   						var y = arr[i].offsetTop + arr[i].offsetHeight/2;
+	   					
+	   						//利用插值求出最小斜边即与移动元素中心点最近的img。
+							var chaX = centerX - x;
+							var chaY = centerY - y;
+							var xiebian = chaX * chaX + chaY *chaY;
+							//console.log(chaX,chaY,xiebian);
+							if(min >= xiebian){
+								min = xiebian;
+								oBox = arr[i];
+							}
+						}	
+	   				}
+	   				document.onmouseup = function(){
+		   				document.onmousemove = document.onmouseup = null;//鼠标抬起时清空移动事件；
+		   		
+		   				
+		   				console.log(oBox);
+		   				if(oBox){//交换位置；
+			   				var oBoxLeft = parseInt(posiArr[oBox.index].left);
+			   				var oBoxTop = parseInt(posiArr[oBox.index].top);	
+			   				var itemTop = parseInt(posiArr[item.index].top);//移动元素的位置；
+			   				var itemLeft = parseInt(posiArr[item.index].left);//移动元素的位置；
+			   					mTween(item,{left:oBoxLeft,top:oBoxTop},300,"linear");
+			   					mTween(oBox,{left:itemLeft,top:itemTop},300,"linear",function(){
+			   						//交换完位置之后交换下标；
+			   						var a = item.index;
+			   						item.index = oBox.index;
+			   						oBox.index = a;
+			   					});	   					
+		   				}	   				
+		   			}
+	   				ev.preventDefault();//取消默认行为；
+	   			}
+	   				   			
+	   		});
+		}
+</script>
+</body>
+</html>
